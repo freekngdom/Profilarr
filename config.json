@@ -1,11 +1,11 @@
 {
   "master": {
     "sonarr": {
-      "base_url": "http://localhost:8989",
+      "base_url": "http://localhost:8998",
       "api_key": "API_KEY_HERE"
     },
     "radarr": {
-      "base_url": "http://localhost:7878",
+      "base_url": "http://localhost:7887",
       "api_key": "API_KEY_HERE"
     }
   },

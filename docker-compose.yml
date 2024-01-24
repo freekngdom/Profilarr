@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr-profilarr
+    environment:
+      - PUID=1000 # Replace with your user ID
+      - PGID=1000 # Replace with your group ID
+      - TZ=Europe/London # Replace with your timezone
+    volumes:
+      - ./profilarr/radarr_config:/config # Radarr config files
+      - ./profilarr/movies:/movies # Movies directory
+      - ./profilarr/downloads:/downloads # Download directory
+    ports:
+      - 7887:7878 # Change the first number to use a different port
+    restart: unless-stopped
+
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr-profilarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./profilarr/sonarr_config:/config # Sonarr config files
+      - ./profilarr/tv:/tv # TV series directory
+      - ./profilarr/downloads:/downloads # Download directory
+    ports:
+      - 8998:8989 # Change the first number to use a different port
+    restart: unless-stopped
