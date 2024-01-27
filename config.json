@@ -2,7 +2,7 @@
   "master": {
     "sonarr": {
       "base_url": "http://localhost:8989",
-      "api_key": "API_KEY_HERE"
+      "api_key": "API_KEY_HER"
     },
     "radarr": {
       "base_url": "http://localhost:7878",
